@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رحلة التعلم الرقمي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="brand">رحلة التعلم الرقمي</div>
+    <nav>
+        <button onclick="showPage('home')">الرئيسية</button>
+        <button onclick="showPage('student')">بيانات الطالب</button>
+        <button onclick="showPage('certificate')">الشهادة</button>
+    </nav>
+    <div class="hero">
+        <span class="tag">بيئة تعليمية تفاعلية</span>
+        <h1>اكتشف المعرفة.. وابدأ رحلة التعلم</h1>
+        <p>مادة البرمجة والذكاء الاصطناعي</p>
+        <p>تعلم، تفاعل، اختبر معلوماتك، وتابع تقدمك.</p>
+    </div>
+</header>
+
+<main>
+
+    <!-- بيانات الطالب -->
+    <section id="student" class="page">
+        <div class="panel">
+            <h2>بيانات الطالب</h2>
+            <p>سجل بياناتك قبل بدء الرحلة التعليمية.</p>
+
+            <form id="studentForm">
+                <label>اسم الطالب</label>
+                <input id="studentName" type="text" placeholder="اكتب اسمك" required>
+
+                <label>الصف الدراسي</label>
+                <input id="studentGrade" type="text" placeholder="مثال: الصف الأول الثانوي" required>
+
+                <button type="submit" class="primary">حفظ البيانات</button>
+            </form>
+
+            <p id="studentMessage"></p>
+        </div>
+    </section>
+
+    <!-- الصفحة الرئيسية -->
+    <section id="home" class="page active">
+
+        <div class="welcome panel">
+            <h2 id="welcomeName">أهلًا بك في بيئة التعلم!</h2>
+            <p>اختاري أحد الدروس الثلاثة وابدئي رحلة التعلم.</p>
+        </div>
+
+        <div class="panel progress-card">
+            <h2>مؤشر تقدمك التعليمي</h2>
+            <p id="progressText">أتممت 0 من 3 دروس</p>
+
+            <div class="progress-track">
+                <div id="progressFill" class="progress-fill"></div>
+            </div>
+
+            <h3 id="progressPercent">0% إنجاز</h3>
+            <p id="completedNames">لم يتم إكمال أي درس بعد.</p>
+        </div>
+
+        <h2 class="section-title">الدروس التعليمية</h2>
+
+        <div class="lessons">
+
+            <article class="card">
+                <div class="number">01</div>
+                <h3>المعلومات والوسائط</h3>
+                <p>تعرف على البيانات والمعلومات والمعرفة وأنواع الوسائط.</p>
+                <span id="status0" class="status">لم يبدأ بعد</span>
+                <button class="primary" onclick="openLesson(0)">ابدأ الدرس</button>
+            </article>
+
+            <article class="card">
+                <div class="number">02</div>
+                <h3>البيانات الشخصية</h3>
+                <p>تعرف على البيانات الشخصية والخصوصية وأهمية الحماية.</p>
+                <span id="status1" class="status">لم يبدأ بعد</span>
+                <button class="primary" onclick="openLesson(1)">ابدأ الدرس</button>
+            </article>
+
+            <article class="card">
+                <div class="number">03</div>
+                <h3>حقوق الملكية الفكرية</h3>
+                <p>تعرف على حقوق المؤلف والملكية الصناعية.</p>
+                <span id="status2" class="status">لم يبدأ بعد</span>
+                <button class="primary" onclick="openLesson(2)">ابدأ الدرس</button>
+            </article>
+
+        </div>
+
+        <div class="panel certificate-preview">
+            <h2>شهادة إتمام التعلم</h2>
+            <p>أكملي الدروس الثلاثة والاختبارات للحصول على شهادة إتمام قابلة للطباعة.</p>
+            <button class="primary" onclick="showPage('certificate')">عرض الشهادة</button>
+        </div>
+
+    </section>
+
+    <!-- صفحة شرح الدرس -->
+    <section id="lessonPage" class="page">
+        <div class="panel">
+            <div id="lessonContent"></div>
+
+            <div class="activity">
+                <h3>فكري وأجيبي</h3>
+                <p id="activityText"></p>
+            </div>
+
+            <button class="primary wide" onclick="startQuiz()">
+                ابدأ اختبار على الدرس
+            </button>
+
+            <button class="secondary" onclick="showPage('home')">
+                العودة للدروس
+            </button>
+        </div>
+    </section>
+
+    <!-- صفحة الاختبار -->
+    <section id="quizPage" class="page">
+        <div class="panel">
+            <h2 id="quizTitle">اختبار الدرس</h2>
+            <p>اختاري إجابة واحدة لكل سؤال.</p>
+            <form id="quizForm"></form>
+
+            <button class="primary wide" onclick="gradeQuiz()">
+                تصحيح الإجابات وإظهار النتيجة
+            </button>
+
+            <div id="quizResult"></div>
+        </div>
+    </section>
+
+    <!-- صفحة الشهادة -->
+    <section id="certificate" class="page">
+        <div class="panel">
+            <h2>شهادة إتمام التعلم</h2>
+            <div id="certificateArea"></div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    بيئة تعليمية تفاعلية - مادة البرمجة والذكاء الاصطناعي
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

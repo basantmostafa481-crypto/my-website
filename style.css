@@ -1,0 +1,302 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Tahoma, Arial, sans-serif;
+    background: #f2f6fc;
+    color: #26364a;
+    line-height: 1.9;
+}
+
+header {
+    background: linear-gradient(135deg, #142e4f, #2864a8);
+    color: white;
+    padding: 20px 6%;
+}
+
+.brand {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+nav button {
+    background: transparent;
+    color: white;
+    border: 1px solid #ffffff70;
+    padding: 8px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.hero {
+    text-align: center;
+    padding: 45px 10px;
+}
+
+.hero h1 {
+    font-size: 35px;
+}
+
+.tag {
+    background: #ffffff25;
+    padding: 7px 17px;
+    border-radius: 30px;
+}
+
+main {
+    max-width: 1100px;
+    width: 92%;
+    margin: 35px auto;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+.panel, .card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 18px #0000000d;
+}
+
+.panel h2 {
+    color: #245b91;
+}
+
+.lessons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    border-top: 5px solid #2864a8;
+}
+
+.number {
+    color: #2864a8;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.primary, .secondary {
+    border: none;
+    border-radius: 9px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 15px;
+    margin: 6px 3px;
+}
+
+.primary {
+    background: #245b91;
+    color: white;
+}
+
+.primary:hover {
+    background: #173f68;
+}
+
+.secondary {
+    background: #e5eaf1;
+    color: #26364a;
+}
+
+.wide {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.status {
+    display: block;
+    margin: 12px 0;
+    color: #78899d;
+    font-size: 13px;
+}
+
+.status.done {
+    color: #18835d;
+    font-weight: bold;
+}
+
+.progress-track {
+    background: #e5eaf1;
+    height: 16px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0%;
+    background: #23866b;
+    transition: width 0.4s;
+}
+
+.progress-card {
+    text-align: center;
+}
+
+.section-title {
+    color: #245b91;
+}
+
+#lessonContent h2 {
+    color: #245b91;
+    border-bottom: 2px solid #e1eaf5;
+    padding-bottom: 12px;
+}
+
+#lessonContent h3 {
+    color: #2864a8;
+    margin-top: 25px;
+}
+
+.lesson-box {
+    background: #f0f6ff;
+    border-right: 5px solid #2864a8;
+    padding: 16px;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.example {
+    background: #f0faf5;
+    border-right: 5px solid #25846b;
+    padding: 16px;
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+.activity {
+    background: #fff8e8;
+    padding: 18px;
+    border-radius: 12px;
+    margin-top: 25px;
+}
+
+.question {
+    background: #f5f7fb;
+    border-radius: 12px;
+    padding: 18px;
+    margin: 18px 0;
+}
+
+.question label {
+    display: block;
+    padding: 7px;
+    cursor: pointer;
+}
+
+.question input {
+    margin-left: 8px;
+}
+
+.result-box {
+    background: #edf5ff;
+    padding: 22px;
+    border-radius: 14px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.result-box h1 {
+    font-size: 45px;
+    color: #245b91;
+}
+
+#studentForm label {
+    display: block;
+    margin-top: 15px;
+}
+
+#studentForm input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: inherit;
+}
+
+.certificate {
+    border: 7px double #b18a43;
+    padding: 35px 20px;
+    text-align: center;
+    background: #fffdf6;
+    border-radius: 10px;
+}
+
+.certificate h1 {
+    color: #9b7434;
+    font-size: 32px;
+}
+
+.certificate .student {
+    color: #245b91;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+footer {
+    background: #142e4f;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media(max-width: 750px) {
+    .lessons {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 25px;
+    }
+
+    .panel {
+        padding: 16px;
+    }
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+
+    #certificate, #certificate * {
+        visibility: visible;
+    }
+
+    #certificate {
+        display: block !important;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+    }
+
+    #certificate .panel {
+        box-shadow: none;
+    }
+
+    #certificate button {
+        display: none;
+    }
+}
